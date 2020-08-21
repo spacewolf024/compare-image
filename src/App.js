@@ -1,8 +1,6 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -11,6 +9,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import Constants from './Constants';
+import FileSizeService from './fileSizeService';
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -40,10 +40,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 export default function ImageCompare() {
   const classes = useStyles();
+  const fileSizeService = new FileSizeService();
+  const getSize = (url, id) => {
+    fileSizeService.getFilesize(url,  (size) => {
+      document.getElementById(id).innerHTML = `Size: ${size}`;
+    });
+  }
 
   return (
     <React.Fragment>
@@ -58,33 +63,20 @@ export default function ImageCompare() {
       </AppBar>
       {/* End Header */}
       <main>
-        <Container className={classes.cardGrid} maxWidth="md">
+        <Container className={classes.cardGrid} maxWidth="1500px">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card.index} xs={12} sm={6} md={4}>
+            {Constants.images.map((image, index) => (
+              <Grid item key={index} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://images.crateandbarrel.com/is/image/Crate/Moreau16x36PlwGroupFSSF20/?200811170718&wid=533&hei=533&qlt="
-                    title="Image title"
+                    image={`${image.url}&wid=${image.widHi}&hei=${image.widHi}&fmt=${image.format}&qlt=${image.quality}`}
                   />
                   <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Title
-                    </Typography>
-                    <Typography>
-                      Desciption
-                    </Typography>
+                      <p>Quality: {image.quality}%</p>
+                      <p id={`Size${index}`}>Size: {getSize(`${image.url}&wid=${image.widHi}&hei=${image.widHi}&fmt=${image.format}&qlt=${image.quality}`, `Size${index}`)}</p>
                   </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
-                    </Button>
-                  </CardActions>
                 </Card>
               </Grid>
             ))}
