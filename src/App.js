@@ -63,7 +63,7 @@ export default function ImageCompare() {
       </AppBar>
       {/* End Header */}
       <main>
-        <Container className={classes.cardGrid} maxWidth="1500px">
+        <Container className={classes.cardGrid} maxWidth="xl">
           {/* End hero unit */}
           <Grid container spacing={4}>
             {Constants.images.map((image, index) => (
