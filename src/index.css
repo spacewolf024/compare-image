@@ -16,3 +16,7 @@ code {
   background-color: #222;
 }
 
+.card-set {
+  object-fit: contain;
+  width: 100%;
+}

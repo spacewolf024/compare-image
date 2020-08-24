@@ -42,11 +42,18 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function ImageCompare() {
+
   const classes = useStyles();
   const fileSizeService = new FileSizeService();
-  const getSize = (url, id) => {
+  const getSizeOne = (url, sizeId) => {
     fileSizeService.getFilesize(url,  (size) => {
-      document.getElementById(id).innerHTML = `Size: ${size}`;
+      document.getElementById(sizeId).innerHTML = `1x Size: ${size}`;
+    });
+  }
+
+  const getSizeTwo = (url, sizeId) => {
+    fileSizeService.getFilesize(url,  (size) => {
+      document.getElementById(sizeId).innerHTML = `2x Size: ${size}`;
     });
   }
 
@@ -69,13 +76,15 @@ export default function ImageCompare() {
             {Constants.images.map((image, index) => (
               <Grid item key={index} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image={`${image.url}&wid=${image.widHi}&hei=${image.widHi}&fmt=${image.format}&qlt=${image.quality}`}
-                  />
+
+                  <img id={`image${index}`} className="card-set" srcSet={`${image.url}&wid=${image.widHiOne}&hei=${image.widHiOne}&fmt=${image.format}&qlt=${image.quality} 1x, 
+                  ${image.url}&wid=${image.widHiTwo}&hei=${image.widHiTwo}&fmt=${image.format}&qlt=${image.quality} 2x`} alt="images of stuff"/>
+
                   <CardContent className={classes.cardContent}>
                       <p>Quality: {image.quality}%</p>
-                      <p id={`Size${index}`}>Size: {getSize(`${image.url}&wid=${image.widHi}&hei=${image.widHi}&fmt=${image.format}&qlt=${image.quality}`, `Size${index}`)}</p>
+                      <p id={`Size1${index}`}>Size: {getSizeOne(`${image.url}&wid=${image.widHiOne}&hei=${image.widHiOne}&fmt=${image.format}&qlt=${image.quality}`, `Size1${index}`, `image${index}`)}</p>
+                      <p id={`Size2${index}`}>Size: {getSizeTwo(`${image.url}&wid=${image.widHiTwo}&hei=${image.widHiTwo}&fmt=${image.format}&qlt=${image.quality}`, `Size2${index}`, `image${index}`)}</p>
+
                   </CardContent>
                 </Card>
               </Grid>

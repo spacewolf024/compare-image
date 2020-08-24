@@ -1,10 +1,11 @@
-import FileSizeService from './fileSizeService';
+const Quality = [80, 60, 45];
 
-const fileSizeService = new FileSizeService();
+const WidthHeight1x = 533;
 
-const Quality = [80, 70, 60];
-const WidthHeight = 533;
+const WidthHeight2x = 1066;
+
 const Format = "jpg";
+
 const ImageURL = [
     "https://images.crateandbarrel.com/is/image/Crate/Moreau16x36PlwGroupFSSF20/?",
     "https://images.crateandbarrel.com/is/image/Crate/Eleri20x20PlwCvrSSF20/?",
@@ -23,19 +24,22 @@ const blankTemplate =  [
     {                    
         url: ImageURL[0],
         quality: Quality[0],
-        widHi: WidthHeight,
+        widHiOne: WidthHeight1x,
+        widHiTwo: WidthHeight2x,
         format: Format
     },
     {                    
         url: ImageURL[0],
         quality: Quality[1],
-        widHi: WidthHeight,
+        widHiOne: WidthHeight1x,
+        widHiTwo: WidthHeight2x,
         format: Format
     },
     {                    
         url: ImageURL[0],
         quality: Quality[2],
-        widHi: WidthHeight,
+        widHiOne: WidthHeight1x,
+        widHiTwo: WidthHeight2x,
         format: Format
     },
 ];
@@ -47,19 +51,22 @@ const Constants = {
         {                    
             url: ImageURL[0],
             quality: Quality[0],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
         {                    
             url: ImageURL[0],
             quality: Quality[1],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
         {                    
             url: ImageURL[0],
             quality: Quality[2],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
 
@@ -68,19 +75,22 @@ const Constants = {
         {                    
             url: ImageURL[1],
             quality: Quality[0],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
         {                    
             url: ImageURL[1],
             quality: Quality[1],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
         {                    
             url: ImageURL[1],
             quality: Quality[2],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
 
@@ -89,19 +99,22 @@ const Constants = {
         {                    
             url: ImageURL[2],
             quality: Quality[0],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
         {                    
             url: ImageURL[2],
             quality: Quality[1],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
         {                    
             url: ImageURL[2],
             quality: Quality[2],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
 
@@ -110,19 +123,22 @@ const Constants = {
         {                    
             url: ImageURL[3],
             quality: Quality[0],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
         {                    
             url: ImageURL[3],
             quality: Quality[1],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
         {                    
             url: ImageURL[3],
             quality: Quality[2],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
 
@@ -130,19 +146,22 @@ const Constants = {
         {                    
             url: ImageURL[4],
             quality: Quality[0],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
         {                    
             url: ImageURL[4],
             quality: Quality[1],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
         {                    
             url: ImageURL[4],
             quality: Quality[2],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
 
@@ -151,19 +170,22 @@ const Constants = {
         {                    
             url: ImageURL[5],
             quality: Quality[0],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
         {                    
             url: ImageURL[5],
             quality: Quality[1],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
         {                    
             url: ImageURL[5],
             quality: Quality[2],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
 
@@ -172,38 +194,44 @@ const Constants = {
         {                    
             url: ImageURL[6],
             quality: Quality[0],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
         {                    
             url: ImageURL[6],
             quality: Quality[1],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
         {                    
             url: ImageURL[6],
             quality: Quality[2],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
 // image 8
         {                    
             url: ImageURL[7],
             quality: Quality[0],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
         {                    
             url: ImageURL[7],
             quality: Quality[1],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
         {                    
             url: ImageURL[7],
             quality: Quality[2],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
 
@@ -211,70 +239,48 @@ const Constants = {
         {                    
             url: ImageURL[8],
             quality: Quality[0],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
         {                    
             url: ImageURL[8],
             quality: Quality[1],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
         {                    
             url: ImageURL[8],
             quality: Quality[2],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
 // image 10
         {                    
             url: ImageURL[9],
             quality: Quality[0],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
         {                    
             url: ImageURL[9],
             quality: Quality[1],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
         {                    
             url: ImageURL[9],
             quality: Quality[2],
-            widHi: WidthHeight,
-            format: Format
-        },
-// image 11
-        {                    
-            url: ImageURL[10],
-            quality: Quality[0],
-            widHi: WidthHeight,
-            format: Format
-        },
-        {                    
-            url: ImageURL[10],
-            quality: Quality[1],
-            widHi: WidthHeight,
-            format: Format
-        },
-        {                    
-            url: ImageURL[10],
-            quality: Quality[2],
-            widHi: WidthHeight,
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
             format: Format
         },
 
-
-
-
-    ],
-    fileSize: (url) => {
-        fileSizeService.getFilesize(url, (size) => {
-          return size;
-        });
-      }
-
+    ]
 };
 
 export default Constants;
