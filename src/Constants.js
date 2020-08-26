@@ -1,4 +1,4 @@
-const Quality = [80, 60, 45];
+const Quality = [80, 70, 60];
 
 const WidthHeight1x = 533;
 
@@ -16,271 +16,37 @@ const ImageURL = [
     "https://images.crateandbarrel.com/is/image/Crate/AniceBlack6x9RugPileSHF15/?",
     "https://images.crateandbarrel.com/is/image/Crate/YumiBlueMulti5x8RugPileSHF19?",
     "https://images.crateandbarrel.com/is/image/Crate/AlvarezGardenPoufSHS18/?",
-    "https://images.crateandbarrel.com/is/image/Crate/OllieSofaFinolaThrowJL15/?"
+    "https://images.crateandbarrel.com/is/image/Crate/OllieSofaFinolaThrowJL15/?",
+    "https://images.crateandbarrel.com/is/image/Crate/VerneChairWCushSOSSF20_3D_1x1/?",
+    "https://images.crateandbarrel.com/is/image/Crate/FullerQnSleeperSOSSF20_3D_1x1/$web_spill_item$/200625153019/fuller-queen-sleeper-sofa.jpg?"
 ];
 
-const blankTemplate =  [      
-// image
-    {                    
-        url: ImageURL[0],
-        quality: Quality[0],
-        widHiOne: WidthHeight1x,
-        widHiTwo: WidthHeight2x,
-        format: Format
-    },
-    {                    
-        url: ImageURL[0],
-        quality: Quality[1],
-        widHiOne: WidthHeight1x,
-        widHiTwo: WidthHeight2x,
-        format: Format
-    },
-    {                    
-        url: ImageURL[0],
-        quality: Quality[2],
-        widHiOne: WidthHeight1x,
-        widHiTwo: WidthHeight2x,
-        format: Format
-    },
-];
+const templateMaker =  () => {
+    var template = [];
+    var index = 0;
+
+    for(let i = 0; i < ImageURL.length * 3; i++) {
+
+        if(i !== 0) {
+            index = i % 3 === 0 ? index + 1 : index;      
+        }
+
+        let image = {                    
+            url: ImageURL[index],
+            quality: Quality[i % 3],
+            widHiOne: WidthHeight1x,
+            widHiTwo: WidthHeight2x,
+            format: Format
+        };
+    
+        template.push(image);
+    }
+
+    return template;
+}
 
 const Constants = {
-
-    images: [
-// image 1
-        {                    
-            url: ImageURL[0],
-            quality: Quality[0],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-        {                    
-            url: ImageURL[0],
-            quality: Quality[1],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-        {                    
-            url: ImageURL[0],
-            quality: Quality[2],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-
-
-// image 2
-        {                    
-            url: ImageURL[1],
-            quality: Quality[0],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-        {                    
-            url: ImageURL[1],
-            quality: Quality[1],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-        {                    
-            url: ImageURL[1],
-            quality: Quality[2],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-
-
-// image 3
-        {                    
-            url: ImageURL[2],
-            quality: Quality[0],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-        {                    
-            url: ImageURL[2],
-            quality: Quality[1],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-        {                    
-            url: ImageURL[2],
-            quality: Quality[2],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-
-
-// image 4
-        {                    
-            url: ImageURL[3],
-            quality: Quality[0],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-        {                    
-            url: ImageURL[3],
-            quality: Quality[1],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-        {                    
-            url: ImageURL[3],
-            quality: Quality[2],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-
-// image 5
-        {                    
-            url: ImageURL[4],
-            quality: Quality[0],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-        {                    
-            url: ImageURL[4],
-            quality: Quality[1],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-        {                    
-            url: ImageURL[4],
-            quality: Quality[2],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-
-
-// image 6
-        {                    
-            url: ImageURL[5],
-            quality: Quality[0],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-        {                    
-            url: ImageURL[5],
-            quality: Quality[1],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-        {                    
-            url: ImageURL[5],
-            quality: Quality[2],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-
-
-// image 7
-        {                    
-            url: ImageURL[6],
-            quality: Quality[0],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-        {                    
-            url: ImageURL[6],
-            quality: Quality[1],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-        {                    
-            url: ImageURL[6],
-            quality: Quality[2],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-// image 8
-        {                    
-            url: ImageURL[7],
-            quality: Quality[0],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-        {                    
-            url: ImageURL[7],
-            quality: Quality[1],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-        {                    
-            url: ImageURL[7],
-            quality: Quality[2],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-
-// image 9
-        {                    
-            url: ImageURL[8],
-            quality: Quality[0],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-        {                    
-            url: ImageURL[8],
-            quality: Quality[1],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-        {                    
-            url: ImageURL[8],
-            quality: Quality[2],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-// image 10
-        {                    
-            url: ImageURL[9],
-            quality: Quality[0],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-        {                    
-            url: ImageURL[9],
-            quality: Quality[1],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-        {                    
-            url: ImageURL[9],
-            quality: Quality[2],
-            widHiOne: WidthHeight1x,
-            widHiTwo: WidthHeight2x,
-            format: Format
-        },
-
-    ]
+    images: templateMaker(),
 };
 
 export default Constants;
